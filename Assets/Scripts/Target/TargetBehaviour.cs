@@ -6,6 +6,9 @@ public class TargetBehaviour : MonoBehaviour {
 
     Animator anim;
 
+    [SerializeField]
+    AudioSource hitSound;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -16,13 +19,9 @@ public class TargetBehaviour : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
+            hitSound.Play();
             Destroy(other.gameObject);
             anim.SetTrigger("beenShot");
         }
     }
-
-    // Update is called once per frame
-    void Update ()
-    {
-	}
 }

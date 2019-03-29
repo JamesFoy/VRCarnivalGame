@@ -11,6 +11,12 @@ public class GunBehaviour : MonoBehaviour {
     GameObject fireEffect;
 
     [SerializeField]
+    AudioSource gunShotSound;
+
+    [SerializeField]
+    AudioSource bulletDropSound;
+
+    [SerializeField]
     float bulletForce;
 
     [SerializeField]
@@ -18,6 +24,8 @@ public class GunBehaviour : MonoBehaviour {
 
     public void Shoot()
     {
+        bulletDropSound.Play();
+        gunShotSound.Play();
         GameObject spawnedEffect = Instantiate(fireEffect, firePoint.position, firePoint.rotation);
         GameObject spawnedBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
         Rigidbody body = spawnedBullet.GetComponent<Rigidbody>();
