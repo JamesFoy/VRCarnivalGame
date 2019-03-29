@@ -661,6 +661,7 @@ GameObject:
   - component: {fileID: 160665649}
   - component: {fileID: 160665648}
   - component: {fileID: 160665647}
+  - component: {fileID: 160665650}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -712,6 +713,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &160665650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 160665646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8610140f1c6e8f54b886952827be0b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &167184603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2491,6 +2503,7 @@ GameObject:
   - component: {fileID: 783745485}
   - component: {fileID: 783745484}
   - component: {fileID: 783745491}
+  - component: {fileID: 783745492}
   m_Layer: 0
   m_Name: RightControllerScriptAlias
   m_TagString: Untagged
@@ -2701,6 +2714,58 @@ MonoBehaviour:
   snapToNearestFloor: 1
   applyPlayareaParentOffset: 0
   customRaycast: {fileID: 0}
+--- !u!114 &783745492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 783745482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc118d7b0ac84c248beb1cd5cb7cd2d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnControllerStartUseInteractableObject:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: VRTK.UnityEventHelper.VRTK_InteractUse_UnityEvents+ObjectInteractEvent,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnControllerUseInteractableObject:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 897813183}
+        m_MethodName: Shoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: VRTK.UnityEventHelper.VRTK_InteractUse_UnityEvents+ObjectInteractEvent,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnControllerStartUnuseInteractableObject:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: VRTK.UnityEventHelper.VRTK_InteractUse_UnityEvents+ObjectInteractEvent,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnControllerUnuseInteractableObject:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: VRTK.UnityEventHelper.VRTK_InteractUse_UnityEvents+ObjectInteractEvent,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnUseButtonPressed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: VRTK.UnityEventHelper.VRTK_ControllerEvents_UnityEvents+ControllerInteractionEvent,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnUseButtonReleased:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: VRTK.UnityEventHelper.VRTK_ControllerEvents_UnityEvents+ControllerInteractionEvent,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &806051939
 GameObject:
   m_ObjectHideFlags: 0
@@ -2864,6 +2929,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 860793107}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &897813183 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114494086801108218, guid: a4f929d68caa12743848085c2a31798a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2102872425}
+  m_Script: {fileID: 11500000, guid: 13c58e1071f3098408940e39607fb0fa, type: 3}
 --- !u!1 &924506780
 GameObject:
   m_ObjectHideFlags: 0
@@ -4267,48 +4338,6 @@ Transform:
   m_Father: {fileID: 275076387}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1253114300
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4026808785864698, guid: a4f929d68caa12743848085c2a31798a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4026808785864698, guid: a4f929d68caa12743848085c2a31798a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 4026808785864698, guid: a4f929d68caa12743848085c2a31798a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 1.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 4026808785864698, guid: a4f929d68caa12743848085c2a31798a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.00000033412744
-      objectReference: {fileID: 0}
-    - target: {fileID: 4026808785864698, guid: a4f929d68caa12743848085c2a31798a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0.7237875
-      objectReference: {fileID: 0}
-    - target: {fileID: 4026808785864698, guid: a4f929d68caa12743848085c2a31798a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0.00000013164987
-      objectReference: {fileID: 0}
-    - target: {fileID: 4026808785864698, guid: a4f929d68caa12743848085c2a31798a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.69002295
-      objectReference: {fileID: 0}
-    - target: {fileID: 4026808785864698, guid: a4f929d68caa12743848085c2a31798a, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a4f929d68caa12743848085c2a31798a, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &1277868886
 GameObject:
   m_ObjectHideFlags: 0
@@ -4878,6 +4907,7 @@ GameObject:
   - component: {fileID: 1464146854}
   - component: {fileID: 1464146853}
   - component: {fileID: 1464146860}
+  - component: {fileID: 1464146861}
   m_Layer: 0
   m_Name: LeftControllerScriptAlias
   m_TagString: Untagged
@@ -5088,6 +5118,58 @@ MonoBehaviour:
   snapToNearestFloor: 1
   applyPlayareaParentOffset: 0
   customRaycast: {fileID: 0}
+--- !u!114 &1464146861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1464146851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc118d7b0ac84c248beb1cd5cb7cd2d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnControllerStartUseInteractableObject:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: VRTK.UnityEventHelper.VRTK_InteractUse_UnityEvents+ObjectInteractEvent,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnControllerUseInteractableObject:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 897813183}
+        m_MethodName: Shoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: VRTK.UnityEventHelper.VRTK_InteractUse_UnityEvents+ObjectInteractEvent,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnControllerStartUnuseInteractableObject:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: VRTK.UnityEventHelper.VRTK_InteractUse_UnityEvents+ObjectInteractEvent,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnControllerUnuseInteractableObject:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: VRTK.UnityEventHelper.VRTK_InteractUse_UnityEvents+ObjectInteractEvent,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnUseButtonPressed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: VRTK.UnityEventHelper.VRTK_ControllerEvents_UnityEvents+ControllerInteractionEvent,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnUseButtonReleased:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: VRTK.UnityEventHelper.VRTK_ControllerEvents_UnityEvents+ControllerInteractionEvent,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1469619135
 GameObject:
   m_ObjectHideFlags: 0
@@ -8202,6 +8284,48 @@ Transform:
   m_Father: {fileID: 1801056707}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 15.000001, z: 0}
+--- !u!1001 &2102872425
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4026808785864698, guid: a4f929d68caa12743848085c2a31798a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026808785864698, guid: a4f929d68caa12743848085c2a31798a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026808785864698, guid: a4f929d68caa12743848085c2a31798a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026808785864698, guid: a4f929d68caa12743848085c2a31798a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000033412744
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026808785864698, guid: a4f929d68caa12743848085c2a31798a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.7237875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026808785864698, guid: a4f929d68caa12743848085c2a31798a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.00000013164987
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026808785864698, guid: a4f929d68caa12743848085c2a31798a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.69002295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026808785864698, guid: a4f929d68caa12743848085c2a31798a, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a4f929d68caa12743848085c2a31798a, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &2121117058
 GameObject:
   m_ObjectHideFlags: 0
