@@ -9,10 +9,13 @@ public class TargetBehaviour : MonoBehaviour {
     [SerializeField]
     AudioSource hitSound;
 
+    UIScript ui;
+
 	// Use this for initialization
 	void Start ()
     {
         anim = GetComponent<Animator>();
+        ui = GameObject.FindGameObjectWithTag("UI").GetComponent<UIScript>();
 	}
 
     private void OnCollisionEnter(Collision other)
@@ -22,6 +25,7 @@ public class TargetBehaviour : MonoBehaviour {
             hitSound.Play();
             Destroy(other.gameObject);
             anim.SetTrigger("beenShot");
+            ui.score++;
         }
     }
 }
