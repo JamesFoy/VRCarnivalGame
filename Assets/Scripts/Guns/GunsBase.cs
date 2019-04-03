@@ -26,6 +26,12 @@ public class GunsBase : MonoBehaviour {
         Debug.Log("Shoot Gun");
     }
 
+    public void Reload()
+    {
+        shotsDone = 0;
+        anim.SetTrigger("Reload");
+    }
+
     // Use this for initialization
     void Start ()
     {
@@ -35,9 +41,9 @@ public class GunsBase : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (anim == null)
+        if (shotsDone >= maxShots)
         {
-            return;
-        }	
+            Reload();
+        }
 	}
 }

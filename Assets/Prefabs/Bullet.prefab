@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4150454439781910}
   - component: {fileID: 96796612903070338}
+  - component: {fileID: 65236857380859280}
   m_Layer: 0
   m_Name: Trail
   m_TagString: Bullet
@@ -118,7 +119,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1845667497637726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.0081, z: -0}
+  m_LocalPosition: {x: 0, y: -0.005, z: -0.0098}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4957141138201206}
@@ -186,7 +187,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1618595868931464}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -0.6609025, y: 1, z: 2.1886632}
+  m_LocalPosition: {x: 1.7756023, y: 1.276, z: 2.1593044}
   m_LocalScale: {x: 1, y: 0.64353, z: 1}
   m_Children:
   - {fileID: 4794051700724172}
@@ -335,6 +336,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65236857380859280
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1845667497637726}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
+  m_Center: {x: 0, y: -0.00000011920929, z: 0.0048999786}
 --- !u!96 &96796612903070338
 TrailRenderer:
   serializedVersion: 2

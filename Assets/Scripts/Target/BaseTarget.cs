@@ -12,7 +12,7 @@ public class BaseTaget : MonoBehaviour {
 
     protected virtual void SetTarget()
     {
-        Debug.Log("Setup the target");
+        throw new NotImplementedException();
     }
 
 	// Use this for initialization
@@ -22,10 +22,24 @@ public class BaseTaget : MonoBehaviour {
         SetTarget();
 	}
 
+    IEnumerator TargetReset()
+    {
+        yield return new WaitForSeconds(3f);
+        ResetTarget();
+
+        yield break;
+    }
+
+    protected virtual void ResetTarget()
+    {
+        throw new NotImplementedException();
+    }
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
+            StartCoroutine(TargetReset());
             OnHitByBullet(other.gameObject);
         }
     }

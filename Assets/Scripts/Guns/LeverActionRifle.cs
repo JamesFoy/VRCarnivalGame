@@ -7,7 +7,7 @@ public class LeverActionRifle : GunsBase {
     public override void SetAttributes()
     {
         anim = this.gameObject.GetComponent<Animator>();
-        bulletForce = 6000;
+        bulletForce = 10000;
         fireRate = 2.5f;
         maxShots = 10;
         shotsDone = 0;

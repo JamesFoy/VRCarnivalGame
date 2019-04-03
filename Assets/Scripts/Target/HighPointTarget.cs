@@ -17,4 +17,10 @@ public class HighPointTarget : BaseTaget
         anim.SetTrigger("beenShot");
         ui.score += score;
     }
+
+
+    protected override void ResetTarget()
+    {
+        anim.SetTrigger("ResetTarget");
+    }
 }
