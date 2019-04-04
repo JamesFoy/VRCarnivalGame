@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseTaget : MonoBehaviour {
+public class BaseTarget : MonoBehaviour {
 
     protected int score;
     public Animator anim;
@@ -28,6 +28,11 @@ public class BaseTaget : MonoBehaviour {
         ResetTarget();
 
         yield break;
+    }
+
+    public virtual void DifficultyScoreChange()
+    {
+        //will change score
     }
 
     protected virtual void ResetTarget()

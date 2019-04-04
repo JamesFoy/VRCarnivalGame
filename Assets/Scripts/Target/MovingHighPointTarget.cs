@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LowPointTarget : BaseTarget {
+public class MovingHighPointTarget : BaseTarget {
 
     protected override void SetTarget()
     {
-        score = 1;
+        score = 6;
     }
 
     public override void DifficultyScoreChange()
     {
-        score = (score += 10);
+        score = (score += 6);
         Debug.Log("Score is now " + score);
     }
 
