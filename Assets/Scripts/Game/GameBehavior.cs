@@ -22,6 +22,15 @@ public class GameBehavior : MonoBehaviour {
     [SerializeField]
     GameObject hider;
 
+    [SerializeField]
+    GameObject easyMap;
+
+    [SerializeField]
+    GameObject normalMap;
+
+    [SerializeField]
+    GameObject hardMap;
+
     void Start()
     {
         endGame.enabled = false;
@@ -32,22 +41,19 @@ public class GameBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update ()
-    { 
+    {
         if (Input.GetKeyDown("1"))
         {
-            currentDifficulty = Difficulty.easy;
             EasyMode();
         }
 
         if (Input.GetKeyDown("2"))
         {
-            currentDifficulty = Difficulty.normal;
             NormalMode();
         }
 
         if (Input.GetKeyDown("3"))
         {
-            currentDifficulty = Difficulty.hard;
             HardMode();
         }
 
@@ -78,14 +84,23 @@ public class GameBehavior : MonoBehaviour {
         hider.SetActive(false);
     }
 
+    private void GameSelect()
+    {
+        endGame.enabled = false;
+        inGame.enabled = false;
+        gameSelect.enabled = true;
+        hider.SetActive(true);
+    }
+
     private void AddScore(int scoreToAdd)
     {
 
-        List<BaseTarget> lowPointTargets = new List<BaseTarget>();
+        BaseTarget[] lowPointTargets;
 
         var lowPointTarget = new LowPointTarget();
 
-        lowPointTargets.Add(lowPointTarget);
+        //lowPointTargets.Add(lowPointTarget);
+        lowPointTargets = GameObject.FindObjectsOfType<LowPointTarget>();
 
         foreach (BaseTarget target in lowPointTargets)
         {
@@ -108,22 +123,34 @@ public class GameBehavior : MonoBehaviour {
 
     public void EasyMode()
     {
+        currentDifficulty = Difficulty.easy;
         countDown = 60f;
         StartGame();
+        easyMap.SetActive(true);
+        normalMap.SetActive(false);
+        hardMap.SetActive(false);
         AddScore(1);
     }
 
     public void NormalMode()
     {
+        currentDifficulty = Difficulty.normal;
         countDown = 40;
         StartGame();
+        easyMap.SetActive(false);
+        normalMap.SetActive(true);
+        hardMap.SetActive(false);
         AddScore(2);
     }
 
     public void HardMode()
     {
+        currentDifficulty = Difficulty.hard;
         countDown = 30f;
         StartGame();
+        easyMap.SetActive(false);
+        normalMap.SetActive(false);
+        hardMap.SetActive(true);
         AddScore(5);
     }
 }
