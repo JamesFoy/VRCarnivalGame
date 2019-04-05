@@ -16,95 +16,114 @@ public class GameBehavior : MonoBehaviour {
     [SerializeField]
     Canvas endGame;
 
+    [SerializeField]
+    Canvas gameSelect;
+
+    [SerializeField]
+    GameObject hider;
+
     void Start()
     {
         endGame.enabled = false;
-        inGame.enabled = true;
+        inGame.enabled = false;
+        gameSelect.enabled = true;
+        hider.SetActive(true);
     }
 	
 	// Update is called once per frame
 	void Update ()
-    {
-        RunDifficultySettings();
-
+    { 
         if (Input.GetKeyDown("1"))
         {
             currentDifficulty = Difficulty.easy;
+            EasyMode();
         }
 
         if (Input.GetKeyDown("2"))
         {
             currentDifficulty = Difficulty.normal;
+            NormalMode();
         }
 
         if (Input.GetKeyDown("3"))
         {
             currentDifficulty = Difficulty.hard;
+            HardMode();
         }
 
-        countDown -= Time.deltaTime;
-
-        if (countDown <= 0)
+        if (inGame.enabled == true)
         {
-            GameOver();
+            countDown -= Time.deltaTime;
+
+            if (countDown <= 0)
+            {
+                GameOver();
+            }
         }
 	}
 
-    private void RunDifficultySettings()
+    private void StartGame()
     {
-        switch (currentDifficulty)
-        {
-            case Difficulty.easy:
-                EasyMode();
-                break;
-            case Difficulty.normal:
-                NormalMode();
-                break;
-            case Difficulty.hard:
-                HardMode();
-                break;
-        }
+        endGame.enabled = false;
+        inGame.enabled = true;
+        gameSelect.enabled = false;
+        hider.SetActive(false);
     }
 
     private void GameOver()
     {
         endGame.enabled = true;
         inGame.enabled = false;
+        gameSelect.enabled = false;
+        hider.SetActive(false);
     }
 
-    //Test of Polymorphism
-    public void EasyMode()
+    private void AddScore(int scoreToAdd)
     {
+
+        List<BaseTarget> lowPointTargets = new List<BaseTarget>();
+
         var lowPointTarget = new LowPointTarget();
+
+        lowPointTargets.Add(lowPointTarget);
+
+        foreach (BaseTarget target in lowPointTargets)
+        {
+            target.score += scoreToAdd;
+            Debug.Log(target.score);
+        }
+
+        List<BaseTarget> highPointTargets = new List<BaseTarget>();
+
         var highPointTarget = new HighPointTarget();
 
-        List<BaseTarget> targets = new List<BaseTarget>();
-        targets.Add(lowPointTarget);
-        targets.Add(highPointTarget);
+        highPointTargets.Add(highPointTarget);
 
-        foreach (BaseTarget easyTargets in targets)
+        foreach (BaseTarget target in highPointTargets)
         {
-            easyTargets.DifficultyScoreChange();
+            target.score += scoreToAdd + 2;
+            Debug.Log(target.score);
         }
+    }
+
+    public void EasyMode()
+    {
+        countDown = 60f;
+        StartGame();
+        AddScore(1);
     }
 
     public void NormalMode()
     {
-        var movingLowPointTarget = new MovingLowPointTarget();
-        var movingHighPointTarget = new MovingHighPointTarget();
-
-        List<BaseTarget> targets = new List<BaseTarget>();
-        targets.Add(movingLowPointTarget);
-        targets.Add(movingHighPointTarget);
-
-        foreach (BaseTarget mediumTargets in targets)
-        {
-            mediumTargets.DifficultyScoreChange();
-        }
+        countDown = 40;
+        StartGame();
+        AddScore(2);
     }
 
     public void HardMode()
     {
-
+        countDown = 30f;
+        StartGame();
+        AddScore(5);
     }
 }

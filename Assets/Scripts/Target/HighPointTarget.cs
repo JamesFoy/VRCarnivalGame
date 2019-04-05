@@ -2,19 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HighPointTarget : BaseTarget
-{
-
-    protected override void SetTarget()
-    {
-        score = 2;
-    }
-
-    public override void DifficultyScoreChange()
-    {
-        score = (score += 20);
-        Debug.Log("Score is now " + score);
-    }
+public class HighPointTarget : BaseTarget{
 
     protected override void OnHitByBullet(GameObject gameObject)
     {

@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class LowPointTarget : BaseTarget {
 
-    protected override void SetTarget()
-    {
-        score = 1;
-    }
-
-    public override void DifficultyScoreChange()
-    {
-        score = (score += 10);
-        Debug.Log("Score is now " + score);
-    }
 
     protected override void OnHitByBullet(GameObject gameObject)
     {

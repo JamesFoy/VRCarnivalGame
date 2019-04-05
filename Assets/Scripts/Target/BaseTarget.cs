@@ -5,21 +5,15 @@ using UnityEngine;
 
 public class BaseTarget : MonoBehaviour {
 
-    protected int score;
+    public int score;
     public Animator anim;
     public AudioSource hitSound;
     protected UIScript ui;
-
-    protected virtual void SetTarget()
-    {
-        throw new NotImplementedException();
-    }
 
 	// Use this for initialization
 	void Start ()
     {
         ui = GameObject.FindGameObjectWithTag("UI").GetComponent<UIScript>();
-        SetTarget();
 	}
 
     IEnumerator TargetReset()
@@ -28,11 +22,6 @@ public class BaseTarget : MonoBehaviour {
         ResetTarget();
 
         yield break;
-    }
-
-    public virtual void DifficultyScoreChange()
-    {
-        //will change score
     }
 
     protected virtual void ResetTarget()
