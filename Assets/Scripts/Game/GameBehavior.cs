@@ -99,7 +99,6 @@ public class GameBehavior : MonoBehaviour {
 
         var lowPointTarget = new LowPointTarget();
 
-        //lowPointTargets.Add(lowPointTarget);
         lowPointTargets = GameObject.FindObjectsOfType<LowPointTarget>();
 
         foreach (BaseTarget target in lowPointTargets)
