@@ -107,11 +107,11 @@ public class GameBehavior : MonoBehaviour {
             Debug.Log(target.score);
         }
 
-        List<BaseTarget> highPointTargets = new List<BaseTarget>();
+        BaseTarget[] highPointTargets;
 
         var highPointTarget = new HighPointTarget();
 
-        highPointTargets.Add(highPointTarget);
+        highPointTargets = GameObject.FindObjectsOfType<HighPointTarget>();
 
         foreach (BaseTarget target in highPointTargets)
         {

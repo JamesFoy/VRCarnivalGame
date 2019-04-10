@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LowPointTarget : BaseTarget {
 
-
     protected override void OnHitByBullet(GameObject gameObject)
     {
         hitSound.Play();
