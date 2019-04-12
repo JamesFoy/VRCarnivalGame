@@ -11,6 +11,9 @@ public class GameBehavior : MonoBehaviour {
     public float countDown = 60f;
 
     [SerializeField]
+    AudioSource bellRing;
+
+    [SerializeField]
     Canvas inGame;
 
     [SerializeField]
@@ -59,10 +62,14 @@ public class GameBehavior : MonoBehaviour {
 
         if (inGame.enabled == true)
         {
-            countDown -= Time.deltaTime;
+            if (countDown > 0)
+            {
+                countDown -= Time.deltaTime;
+            }
 
             if (countDown <= 0)
             {
+                bellRing.PlayOneShot(bellRing.GetComponent<AudioSource>().clip);
                 GameOver();
             }
         }
@@ -79,7 +86,6 @@ public class GameBehavior : MonoBehaviour {
     private void GameOver()
     {
         endGame.enabled = true;
-        inGame.enabled = false;
         gameSelect.enabled = false;
         hider.SetActive(false);
     }

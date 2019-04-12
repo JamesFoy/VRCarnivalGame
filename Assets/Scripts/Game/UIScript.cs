@@ -19,7 +19,7 @@ public class UIScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        time.text = "Time Remaining: " + game.countDown;
+        time.text = "Time Remaining: " + (int)game.countDown;
         scoreText.text = "Score: " + score;
 	}
 }
