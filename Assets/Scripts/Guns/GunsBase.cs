@@ -13,7 +13,7 @@ public class GunsBase : MonoBehaviour {
     public AudioSource gunShotSound;
     public AudioSource bulletDropSound;
     public GameObject bullet;
-    public GameObject fireEffect;
+    public ParticleSystem fireEffect;
     public Animator anim;
 
     public virtual void SetAttributes()
@@ -41,6 +41,11 @@ public class GunsBase : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if (!fireEffect.isPlaying)
+        {
+            fireEffect.gameObject.SetActive(false);
+        }
+
         if (shotsDone >= maxShots)
         {
             Reload();

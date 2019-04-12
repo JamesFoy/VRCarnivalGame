@@ -8,7 +8,7 @@ public class Revolver : GunsBase {
     {
         anim = this.gameObject.GetComponent<Animator>();
         bulletForce = 4000;
-        fireRate = 1f;
+        fireRate = 0.5f;
         maxShots = 6;
         shotsDone = 0;
     }
@@ -22,7 +22,11 @@ public class Revolver : GunsBase {
             anim.SetTrigger("Shoot");
             bulletDropSound.Play();
             gunShotSound.Play();
-            GameObject spawnedEffect = Instantiate(fireEffect, firePoint.position, firePoint.rotation);
+            fireEffect.gameObject.SetActive(true);
+            if (fireEffect.isPlaying)
+            {
+                fireEffect.Play();
+            }
             GameObject spawnedBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
             Rigidbody body = spawnedBullet.GetComponent<Rigidbody>();
             body.AddForce(firePoint.transform.forward * bulletForce, ForceMode.Acceleration);
