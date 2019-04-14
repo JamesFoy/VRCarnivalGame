@@ -22,8 +22,8 @@ public class GameBehavior : MonoBehaviour {
     [SerializeField]
     Canvas gameSelect;
 
-    [SerializeField]
-    GameObject hider;
+    //[SerializeField]
+    //GameObject hider;
 
     [SerializeField]
     GameObject easyMap;
@@ -39,7 +39,7 @@ public class GameBehavior : MonoBehaviour {
         endGame.enabled = false;
         inGame.enabled = false;
         gameSelect.enabled = true;
-        hider.SetActive(true);
+        //hider.SetActive(true);
     }
 	
 	// Update is called once per frame
@@ -80,14 +80,14 @@ public class GameBehavior : MonoBehaviour {
         endGame.enabled = false;
         inGame.enabled = true;
         gameSelect.enabled = false;
-        hider.SetActive(false);
+        //hider.SetActive(false);
     }
 
     private void GameOver()
     {
         endGame.enabled = true;
         gameSelect.enabled = false;
-        hider.SetActive(false);
+        //hider.SetActive(false);
     }
 
     private void GameSelect()
@@ -95,7 +95,7 @@ public class GameBehavior : MonoBehaviour {
         endGame.enabled = false;
         inGame.enabled = false;
         gameSelect.enabled = true;
-        hider.SetActive(true);
+        //hider.SetActive(true);
     }
 
     private void AddScore(int scoreToAdd)
