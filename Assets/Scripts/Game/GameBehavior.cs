@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class GameBehavior : MonoBehaviour {
 
-    public enum Difficulty {easy, normal, hard};
-    public Difficulty currentDifficulty = Difficulty.easy;
+    public enum Difficulty {select, easy, normal, hard};
+    public Difficulty currentDifficulty = Difficulty.select;
 
     public float countDown = 60f;
 
@@ -17,13 +17,7 @@ public class GameBehavior : MonoBehaviour {
     Canvas inGame;
 
     [SerializeField]
-    Canvas endGame;
-
-    [SerializeField]
-    Canvas gameSelect;
-
-    //[SerializeField]
-    //GameObject hider;
+    Canvas mapSelect;
 
     [SerializeField]
     GameObject easyMap;
@@ -34,12 +28,24 @@ public class GameBehavior : MonoBehaviour {
     [SerializeField]
     GameObject hardMap;
 
+    [SerializeField]
+    GameObject gameSelectMap;
+
+    [SerializeField]
+    GameObject playerZone;
+
+    [SerializeField]
+    UIScript uiScript;
+
+    [SerializeField]
+    GameObject mapSelectAudio;
+
+    [SerializeField]
+    GameObject inGameAudio;
+
     void Start()
     {
-        endGame.enabled = false;
-        inGame.enabled = false;
-        gameSelect.enabled = true;
-        //hider.SetActive(true);
+        GameSelect();
     }
 	
 	// Update is called once per frame
@@ -69,33 +75,31 @@ public class GameBehavior : MonoBehaviour {
 
             if (countDown <= 0)
             {
-                bellRing.PlayOneShot(bellRing.GetComponent<AudioSource>().clip);
-                GameOver();
+                bellRing.PlayOneShot(GetComponent<AudioSource>().clip);
             }
         }
 	}
 
     private void StartGame()
     {
-        endGame.enabled = false;
+        inGameAudio.SetActive(true);
+        mapSelectAudio.SetActive(false);
+        uiScript.score = 0;
+        gameSelectMap.SetActive(false);
+        playerZone.SetActive(true);
         inGame.enabled = true;
-        gameSelect.enabled = false;
-        //hider.SetActive(false);
-    }
-
-    private void GameOver()
-    {
-        endGame.enabled = true;
-        gameSelect.enabled = false;
-        //hider.SetActive(false);
+        mapSelect.enabled = false;
     }
 
     private void GameSelect()
     {
-        endGame.enabled = false;
+        mapSelectAudio.SetActive(true);
+        inGameAudio.SetActive(false);
+        currentDifficulty = Difficulty.select;
+        gameSelectMap.SetActive(true);
+        playerZone.SetActive(false);
         inGame.enabled = false;
-        gameSelect.enabled = true;
-        //hider.SetActive(true);
+        mapSelect.enabled = true;
     }
 
     private void AddScore(int scoreToAdd)
@@ -157,5 +161,26 @@ public class GameBehavior : MonoBehaviour {
         normalMap.SetActive(false);
         hardMap.SetActive(true);
         AddScore(5);
+    }
+
+    public void RestartLevel()
+    {
+        if (currentDifficulty == Difficulty.easy)
+        {
+            EasyMode();
+        }
+        else if (currentDifficulty == Difficulty.normal)
+        {
+            NormalMode();
+        }
+        else if (currentDifficulty == Difficulty.hard)
+        {
+            HardMode();
+        }
+    }
+
+    public void MapSelection()
+    {
+        GameSelect();
     }
 }

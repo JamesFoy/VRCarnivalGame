@@ -9,11 +9,14 @@ public class BaseTarget : MonoBehaviour {
     public Animator anim;
     public AudioSource hitSound;
     protected UIScript ui;
+    protected bool targetHitState = false;
+    protected Collider targetCollider;
 
 	// Use this for initialization
 	void Start ()
     {
         ui = GameObject.FindGameObjectWithTag("UI").GetComponent<UIScript>();
+        targetCollider = this.gameObject.GetComponent<Collider>();
 	}
 
     IEnumerator TargetReset()
