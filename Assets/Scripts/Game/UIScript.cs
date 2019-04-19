@@ -34,6 +34,7 @@ public class UIScript : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
+        //checks if the current difficulty is not map selection
         if (game.currentDifficulty != GameBehavior.Difficulty.select)
         {
             duringGame.SetActive(true);
@@ -42,6 +43,7 @@ public class UIScript : MonoBehaviour {
             scoreText.text = "Score: " + score;
         }
 
+        //information to display when the countdown reaches 0
         if (game.countDown <= 0)
         {
             afterGame.SetActive(true);
