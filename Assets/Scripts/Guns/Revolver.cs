@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author - James Foy
+//This script is used as for the revolver weapon and inherits from the guns base class
+
 public class Revolver : GunsBase {
 
+    //Overrides the variables of the lever action rifle
     public override void SetAttributes()
     {
         anim = this.gameObject.GetComponent<Animator>();
@@ -13,6 +17,7 @@ public class Revolver : GunsBase {
         shotsDone = 0;
     }
 
+    //Overrides the shooting variables to work with the gun that this script is attached to
     public override void Shoot()
     {
         if (Time.time > nextFire && shotsDone < maxShots)

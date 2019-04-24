@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//Author - James Foy
+//This script is used for all of the UI elements within the game. It controls updating the UI when certain actions 
+//by the player are completed like hitting targets
+
 public class UIScript : MonoBehaviour {
 
     [SerializeField]

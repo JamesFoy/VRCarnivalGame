@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author - James Foy
+//This script is used as a base class for all other targets to inherit from
+
 public class BaseTarget : MonoBehaviour {
 
     public int score;
@@ -12,13 +15,14 @@ public class BaseTarget : MonoBehaviour {
     protected bool targetHitState = false;
     protected Collider targetCollider;
 
-	// Use this for initialization
+	//This provides each target a reference so specific components
 	void Start ()
     {
         ui = GameObject.FindGameObjectWithTag("UI").GetComponent<UIScript>();
         targetCollider = this.gameObject.GetComponent<Collider>();
 	}
 
+    //This will allow the target to reset its rotation after a few seconds
     IEnumerator TargetReset()
     {
         yield return new WaitForSeconds(3f);
@@ -32,6 +36,7 @@ public class BaseTarget : MonoBehaviour {
         throw new NotImplementedException();
     }
 
+    //This is used to allow every target to detect a collison with a bullet that inherits from this class
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Bullet"))

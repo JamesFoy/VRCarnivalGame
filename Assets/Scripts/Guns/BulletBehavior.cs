@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author - James Foy
+//This script is only used to destroy the bullets after a few seconds to reduce performance issues
+
 public class BulletBehavior : MonoBehaviour {
 
 	// Use this for initialization
@@ -10,6 +13,7 @@ public class BulletBehavior : MonoBehaviour {
         StartCoroutine(Destroy());
 	}
 
+    //starts countdown till the object is destroyed
     IEnumerator Destroy()
     {
         yield return new WaitForSeconds(4f);

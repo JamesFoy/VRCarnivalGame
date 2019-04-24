@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Author - James Foy
+//This script is used to control all of the game behaviour like map selection and difficulties
+
 public class GameBehavior : MonoBehaviour {
 
     public enum Difficulty {select, easy, normal, hard};
@@ -48,7 +51,7 @@ public class GameBehavior : MonoBehaviour {
         GameSelect();
     }
 	
-	// Update is called once per frame
+	// Update is called once per frame. These are used to help test each mode
 	void Update ()
     {
         if (Input.GetKeyDown("1"))
@@ -66,6 +69,7 @@ public class GameBehavior : MonoBehaviour {
             HardMode();
         }
 
+        //starts the countdown when the player is in the game
         if (inGame.enabled == true)
         {
             if (countDown > 0)
@@ -73,6 +77,7 @@ public class GameBehavior : MonoBehaviour {
                 countDown -= Time.deltaTime;
             }
 
+            //makes a bell ring at the end of the countdown
             if (countDown <= 0)
             {
                 bellRing.PlayOneShot(GetComponent<AudioSource>().clip);
@@ -80,6 +85,7 @@ public class GameBehavior : MonoBehaviour {
         }
 	}
 
+    //Actions to take when the game starts. Sets specific maps and variables like the ui score to 0
     private void StartGame()
     {
         inGameAudio.SetActive(true);
@@ -91,6 +97,7 @@ public class GameBehavior : MonoBehaviour {
         mapSelect.enabled = false;
     }
 
+    //Actions to take when the player is in map selection. Sets specific maps to on/off
     private void GameSelect()
     {
         mapSelectAudio.SetActive(true);
@@ -102,6 +109,7 @@ public class GameBehavior : MonoBehaviour {
         mapSelect.enabled = true;
     }
 
+    //This is used to add a specific amount to how much score each target gives the player depending on the difficutly
     private void AddScore(int scoreToAdd)
     {
 
@@ -130,6 +138,7 @@ public class GameBehavior : MonoBehaviour {
         }
     }
 
+    //All of the actions to take if the player choses easy mode. Sets the map, countdown timer and amount of score each target adds
     public void EasyMode()
     {
         currentDifficulty = Difficulty.easy;
@@ -141,6 +150,7 @@ public class GameBehavior : MonoBehaviour {
         AddScore(1);
     }
 
+    //All of the actions to take if the player choses normal mode. Sets the map, countdown timer and amount of score each target adds
     public void NormalMode()
     {
         currentDifficulty = Difficulty.normal;
@@ -152,6 +162,7 @@ public class GameBehavior : MonoBehaviour {
         AddScore(2);
     }
 
+    //All of the actions to take if the player choses hard mode. Sets the map, countdown timer and amount of score each target adds
     public void HardMode()
     {
         currentDifficulty = Difficulty.hard;
@@ -163,6 +174,7 @@ public class GameBehavior : MonoBehaviour {
         AddScore(5);
     }
 
+    //Actions to take when the player choses to restart the current map/difficulty
     public void RestartLevel()
     {
         if (currentDifficulty == Difficulty.easy)
@@ -179,6 +191,7 @@ public class GameBehavior : MonoBehaviour {
         }
     }
 
+    //Makes the player move to map selection
     public void MapSelection()
     {
         GameSelect();
