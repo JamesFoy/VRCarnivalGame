@@ -17,7 +17,7 @@ namespace Targets
         public AudioSource hitSound;
         protected UIScript ui;
         protected bool targetHitState = false;
-        protected Collider targetCollider;
+        public Collider targetCollider;
 
         //This provides each target a reference so specific components
         void Start()

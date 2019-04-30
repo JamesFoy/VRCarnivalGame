@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using Game;
 
-//Author - James Foy (Foy14355306)
+//Author - James Foy
 //This script is used for all of the UI elements within the game. It controls updating the UI when certain actions 
 //by the player are completed like hitting targets
 
@@ -30,6 +30,9 @@ namespace UI
 
         [SerializeField]
         GameObject afterGame;
+
+        [SerializeField]
+        AudioSource bellRing;
 
         public int score = 0;
 
