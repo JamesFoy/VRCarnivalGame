@@ -5,7 +5,7 @@ using UnityEngine;
 using Targets;
 using UI;
 
-//Author - James Foy
+//Author - James Foy (Foy14355306)
 //This script is used to control all of the game behaviour like map selection and difficulties
 
 namespace Game
@@ -82,10 +82,30 @@ namespace Game
                     countDown -= Time.deltaTime;
                 }
 
-                //makes a bell ring at the end of the countdown
                 if (countDown <= 0)
                 {
-                    bellRing.PlayOneShot(GetComponent<AudioSource>().clip);
+                    //Drop Targets
+                    BaseTarget[] lowPointTargets;
+
+                    var lowPointTarget = new LowPointTarget();
+
+                    lowPointTargets = GameObject.FindObjectsOfType<LowPointTarget>();
+
+                    foreach (BaseTarget target in lowPointTargets)
+                    {
+                        target.anim.SetTrigger("beenShot");
+                    }
+
+                    BaseTarget[] highPointTargets;
+
+                    var highPointTarget = new HighPointTarget();
+
+                    highPointTargets = GameObject.FindObjectsOfType<HighPointTarget>();
+
+                    foreach (BaseTarget target in highPointTargets)
+                    {
+                        target.anim.SetTrigger("beenShot");
+                    }
                 }
             }
         }

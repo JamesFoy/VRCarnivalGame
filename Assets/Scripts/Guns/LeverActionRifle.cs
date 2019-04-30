@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Author - James Foy
+//Author - James Foy (Foy14355306)
 //This script is used as for the lever action rifle weapon and inherits from the guns base class
 
 namespace Guns

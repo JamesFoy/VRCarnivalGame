@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Author - James Foy
+//Author - James Foy (Foy14355306)
 //This script is used as for the low point target and inherits from the base target class
 
 namespace Targets

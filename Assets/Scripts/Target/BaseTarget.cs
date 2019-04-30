@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UI;
 
-//Author - James Foy
+//Author - James Foy (Foy14355306)
 //This script is used as a base class for all other targets to inherit from
 
 namespace Targets
