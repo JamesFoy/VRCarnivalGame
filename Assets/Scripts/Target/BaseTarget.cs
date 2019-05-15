@@ -22,11 +22,6 @@ namespace Targets
         //This provides each target a reference so specific components
         void Start()
         {
-            if (anim == null)
-            {
-                return;
-            }
-
             ui = GameObject.FindGameObjectWithTag("UI").GetComponent<UIScript>();
             targetCollider = this.gameObject.GetComponent<Collider>();
         }
