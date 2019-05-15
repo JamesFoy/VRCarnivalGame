@@ -81,6 +81,32 @@ namespace Game
                 {
                     countDown -= Time.deltaTime;
                 }
+
+                if (countDown <= 0)
+                {
+                    //Drop Targets
+                    BaseTarget[] lowPointTargets;
+
+                    var lowPointTarget = new LowPointTarget();
+
+                    lowPointTargets = GameObject.FindObjectsOfType<LowPointTarget>();
+
+                    foreach (BaseTarget target in lowPointTargets)
+                    {
+                        target.anim.SetTrigger("beenShot");
+                    }
+
+                    BaseTarget[] highPointTargets;
+
+                    var highPointTarget = new HighPointTarget();
+
+                    highPointTargets = GameObject.FindObjectsOfType<HighPointTarget>();
+
+                    foreach (BaseTarget target in highPointTargets)
+                    {
+                        target.anim.SetTrigger("beenShot");
+                    }
+                }
             }
         }
 
@@ -179,17 +205,14 @@ namespace Game
             if (currentDifficulty == Difficulty.easy)
             {
                 EasyMode();
-                ResetTargets();
             }
             else if (currentDifficulty == Difficulty.normal)
             {
                 NormalMode();
-                ResetTargets();
             }
             else if (currentDifficulty == Difficulty.hard)
             {
                 HardMode();
-                ResetTargets();
             }
         }
 
@@ -197,34 +220,6 @@ namespace Game
         public void MapSelection()
         {
             GameSelect();
-        }
-
-        public void ResetTargets()
-        {
-            //Resets Dropped Targets when the countdown ends
-            BaseTarget[] lowPointTargets;
-
-            var lowPointTarget = new LowPointTarget();
-
-            lowPointTargets = GameObject.FindObjectsOfType<LowPointTarget>();
-
-            foreach (BaseTarget target in lowPointTargets)
-            {
-                target.targetCollider.enabled = true;
-                target.anim.SetTrigger("ResetTarget");
-            }
-
-            BaseTarget[] highPointTargets;
-
-            var highPointTarget = new HighPointTarget();
-
-            highPointTargets = GameObject.FindObjectsOfType<HighPointTarget>();
-
-            foreach (BaseTarget target in highPointTargets)
-            {
-                target.targetCollider.enabled = true;
-                target.anim.SetTrigger("ResetTarget");
-            }
         }
     }
 }
