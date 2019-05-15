@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Author - James Foy (Foy14355306)
+//Author - James Foy
 //This script is used as a base class for all other weapons to inherit from
 namespace Guns
 {

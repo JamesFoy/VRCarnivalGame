@@ -6494,7 +6494,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4566563515635400, guid: fe9b783096ae0674391398df208f787a, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe9b783096ae0674391398df208f787a, type: 2}
@@ -14825,7 +14825,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4566563515635400, guid: fe9b783096ae0674391398df208f787a, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1113427492402704, guid: fe9b783096ae0674391398df208f787a, type: 2}
       propertyPath: m_Name
@@ -33206,6 +33206,130 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4840291406134846, guid: cb9c10d259c6ad14ea2e8ef9e059bf02,
     type: 2}
   m_PrefabInternal: {fileID: 1149390328}
+--- !u!1 &826150001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 826150003}
+  - component: {fileID: 826150002}
+  m_Layer: 0
+  m_Name: BellRing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &826150002
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 826150001}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 08e2513df136810468242b3cc6af0854, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.205
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 256
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &826150003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 826150001}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000029504295}
+  m_LocalPosition: {x: 7.6052637, y: 4.2878256, z: 22.45869}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1981691048}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &826370110
 Prefab:
   m_ObjectHideFlags: 0
@@ -52516,7 +52640,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4716392939536394, guid: 50f2fde45d9cdce429322743e6724bb0, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50f2fde45d9cdce429322743e6724bb0, type: 2}
@@ -53693,7 +53817,7 @@ Prefab:
         type: 2}
       propertyPath: bellRing
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 826150002}
     - target: {fileID: 114828089501516514, guid: 2bd1024dc7cf74c4eb7da04fbc17a099,
         type: 2}
       propertyPath: mapSelect
@@ -58454,11 +58578,9 @@ GameObject:
   - component: {fileID: 1464146857}
   - component: {fileID: 1464146856}
   - component: {fileID: 1464146855}
-  - component: {fileID: 1464146853}
-  - component: {fileID: 1464146862}
-  - component: {fileID: 1464146861}
-  - component: {fileID: 1464146860}
   - component: {fileID: 1464146854}
+  - component: {fileID: 1464146853}
+  - component: {fileID: 1464146860}
   m_Layer: 0
   m_Name: LeftControllerScriptAlias
   m_TagString: Untagged
@@ -58522,14 +58644,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ec704cceb26f6f49b6c900fc83d8d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableTeleport: 0
+  enableTeleport: 1
   targetListPolicy: {fileID: 0}
-  pointerRenderer: {fileID: 0}
+  pointerRenderer: {fileID: 1464146853}
   activationButton: 10
   holdButtonToActivate: 1
   activateOnEnable: 0
   activationDelay: 0
-  selectionButton: 3
+  selectionButton: 10
   selectOnPress: 0
   selectionDelay: 0
   selectAfterHoverDuration: 0
@@ -58656,57 +58778,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1464146851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f3942f053b21854fbc5d1227c94120b, type: 3}
+  m_Script: {fileID: 11500000, guid: 377ced3493c4e1842a5b1c23f56519db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layersToIgnore:
-    serializedVersion: 2
-    m_Bits: 4
-  triggerInteraction: 1
---- !u!114 &1464146861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1464146851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  operation: 1
-  checkType: 4
-  identifiers:
-  - UI
---- !u!114 &1464146862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1464146851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71b26f999cbdac8478b6c2a046256169, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activationButton: 3
-  activationMode: 0
-  selectionButton: 10
-  clickMethod: 0
-  attemptClickOnDeactivate: 0
-  clickAfterHoverDuration: 0.1
-  maximumLength: Infinity
-  attachedTo: {fileID: 0}
-  controllerEvents: {fileID: 0}
-  customOrigin: {fileID: 0}
-  controller: {fileID: 0}
-  pointerOriginTransform: {fileID: 0}
-  hoveringElement: {fileID: 0}
-  controllerRenderModel: {fileID: 0}
-  hoverDurationTimer: 0
-  canClickOnHover: 0
-  autoActivatingCanvas: {fileID: 0}
-  collisionClick: 0
+  blinkToColor: {r: 0, g: 0, b: 0, a: 1}
+  blinkTransitionSpeed: 0.6
+  distanceBlinkDelay: 0
+  headsetPositionCompensation: 1
+  targetListPolicy: {fileID: 0}
+  navMeshData: {fileID: 0}
+  navMeshLimitDistance: 0
+  snapToNearestFloor: 1
+  applyPlayareaParentOffset: 0
+  customRaycast: {fileID: 0}
 --- !u!1001 &1467430920
 Prefab:
   m_ObjectHideFlags: 0
@@ -62367,7 +62451,7 @@ Prefab:
     - target: {fileID: 224518400379572278, guid: a08226a8deb67324bb2036f7d3025c78,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224518400379572278, guid: a08226a8deb67324bb2036f7d3025c78,
         type: 2}
@@ -62483,15 +62567,6 @@ Prefab:
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1629736253343214, guid: a08226a8deb67324bb2036f7d3025c78, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114369241962085210, guid: a08226a8deb67324bb2036f7d3025c78,
-        type: 2}
-      propertyPath: bellRing
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a08226a8deb67324bb2036f7d3025c78, type: 2}
@@ -81019,6 +81094,7 @@ Transform:
   - {fileID: 843701580}
   - {fileID: 24428095}
   - {fileID: 101949038}
+  - {fileID: 826150003}
   - {fileID: 1546171584}
   - {fileID: 488959286}
   - {fileID: 280166085}

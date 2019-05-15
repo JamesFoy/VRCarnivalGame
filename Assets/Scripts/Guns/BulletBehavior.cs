@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Author - James Foy (Foy14355306)
+//Author - James Foy
 //This script is only used to destroy the bullets after a few seconds to reduce performance issues
 
 namespace Guns
